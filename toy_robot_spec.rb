@@ -135,5 +135,10 @@ describe ToyRobot do
       @robot.should_receive(:report)
       @robot.read_commands("report")
     end
+
+    it 'will receive place' do
+      @robot.should_receive(:place).with('3','4', 'NORTH')
+      @robot.read_commands('place 3,4,NORTH')
+    end
   end
 end

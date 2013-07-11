@@ -54,7 +54,7 @@ class ToyRobot
       if (args.length == 1)
         self.send(args[0].downcase)
       else
-        self.send(args[0].downcase, args[1].split(','))
+        self.send(args[0].downcase, *args[1].split(','))
       end
     end
   end
