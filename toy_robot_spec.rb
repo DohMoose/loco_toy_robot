@@ -71,5 +71,11 @@ describe ToyRobot do
      @robot.left
      @robot.direction.should eql 'EAST'
     end
+
+    it 'will turn left from north to west' do
+     @robot.place(4,4, 'NORTH')
+     @robot.left
+     @robot.direction.should eql 'WEST'
+    end
   end
 end

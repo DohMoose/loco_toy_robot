@@ -28,7 +28,7 @@ class ToyRobot
 
   def left
     if (index = new_index(-1))
-      index = 4 if index < 0
+      index = 3 if index < 0
       @direction = DIRECTIONS[index]
     end
   end
