@@ -5,6 +5,8 @@ class ToyRobot
   DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
 
   def place(x,y,direction=nil)
+    x = x.to_i
+    y = y.to_i
     @direction = direction if direction
     @location = [x,y] if (TABLE_BOUNDS.include?(x) and TABLE_BOUNDS.include?(y))
   end

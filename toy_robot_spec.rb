@@ -25,6 +25,11 @@ describe ToyRobot do
       @robot.place(1,3,'NORTH')
       @robot.direction.should eql 'NORTH'
     end
+
+    it 'will cope with strings' do
+      @robot.place('3','2', 'EAST')
+      @robot.location.should eql [3,2]
+    end
   end
 
   describe 'Move' do
