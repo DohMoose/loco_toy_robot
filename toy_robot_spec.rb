@@ -21,4 +21,12 @@ describe ToyRobot do
       @robot.direction.should eql 'NORTH'
     end
   end
+
+  describe 'Move' do
+    it 'will move one square NORTH' do
+      @robot.place(2,2,'NORTH')
+      @robot.move
+      @robot.location.should eql [2,3]
+    end
+  end
 end

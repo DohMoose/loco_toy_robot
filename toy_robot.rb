@@ -7,4 +7,11 @@ class ToyRobot
     @direction = direction if direction
     @location = [x,y] if (x < TABLE_BOUNDS and y < TABLE_BOUNDS)
   end
+
+  def move
+    case direction
+    when 'NORTH'
+      place(location[0], location[1] + 1)
+    end
+  end
 end
