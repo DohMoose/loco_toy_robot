@@ -109,4 +109,26 @@ describe ToyRobot do
       @robot.report.should be_nil
     end
   end
+
+  describe 'read_commands' do
+    it 'will receive move' do
+      @robot.should_receive(:move)
+      @robot.read_commands("move")
+    end
+
+    it 'will receive left' do
+      @robot.should_receive(:left)
+      @robot.read_commands("left")
+    end
+
+    it 'will receive right' do
+      @robot.should_receive(:right)
+      @robot.read_commands("right")
+    end
+
+    it 'will receive report' do
+      @robot.should_receive(:report)
+      @robot.read_commands("report")
+    end
+  end
 end

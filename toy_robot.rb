@@ -45,4 +45,15 @@ class ToyRobot
       "#{location.join(',')},#{direction}"
     end
   end
+
+  def read_commands(commands)
+    commands.lines.each do |line|
+      args = line.strip.split
+      if (args.length == 1)
+        self.send(args[0].downcase)
+      else
+        self.send(args[0].downcase, args[1].split(','))
+      end
+    end
+  end
 end
