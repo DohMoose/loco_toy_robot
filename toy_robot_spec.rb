@@ -143,4 +143,16 @@ describe ToyRobot do
       @robot.read_commands('place 3,4,NORTH')
     end
   end
+
+  describe 'integrations' do
+    it 'should run example 1' do
+      commands = <<CMD 
+PLACE 0,0,NORTH 
+MOVE
+REPORT      
+CMD
+      STDOUT.should_receive(:puts).with('0,1,NORTH')
+      @robot.read_commands(commands)
+    end
+  end
 end
