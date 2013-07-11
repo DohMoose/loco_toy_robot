@@ -154,5 +154,28 @@ CMD
       STDOUT.should_receive(:puts).with('0,1,NORTH')
       @robot.read_commands(commands)
     end
+
+    it 'should run example 2' do
+      commands = <<CMD
+PLACE 0,0,NORTH 
+LEFT
+REPORT
+CMD
+      STDOUT.should_receive(:puts).with('0,0,WEST')
+      @robot.read_commands(commands)
+    end
+
+    it 'should run example 3' do
+      commands = <<CMD
+PLACE 1,2,EAST 
+MOVE
+MOVE
+LEFT
+MOVE
+REPORT
+CMD
+      STDOUT.should_receive(:puts).with('3,3,NORTH')
+      @robot.read_commands(commands)
+    end
   end
 end
