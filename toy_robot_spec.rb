@@ -28,5 +28,23 @@ describe ToyRobot do
       @robot.move
       @robot.location.should eql [2,3]
     end
+
+    it 'will move one square SOUTH' do
+      @robot.place(2,2,'SOUTH')
+      @robot.move
+      @robot.location.should eql [2,1]
+    end
+
+    it 'will move one square EAST' do
+      @robot.place(2,2,'EAST')
+      @robot.move
+      @robot.location.should eql [3,2]
+    end
+
+    it 'will move one square WEST' do
+      @robot.place(2,2,'WEST')
+      @robot.move
+      @robot.location.should eql [1,2]
+    end
   end
 end

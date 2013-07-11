@@ -12,6 +12,12 @@ class ToyRobot
     case direction
     when 'NORTH'
       place(location[0], location[1] + 1)
+    when 'SOUTH'
+      place(location[0], location[1] - 1)
+    when 'EAST'
+      place(location[0] + 1, location[1])
+    when 'WEST'
+      place(location[0] - 1, location[1] )
     end
   end
 end
