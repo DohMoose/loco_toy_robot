@@ -51,5 +51,17 @@ describe ToyRobot do
       @robot.move
       @robot.location.should eql [1,2]
     end
+
+    it 'will not move off the south west corner' do
+      @robot.place(0,0, 'SOUTH')
+      @robot.move
+      @robot.location.should eql [0,0]
+    end
+
+    it 'will not move off the north east corner' do
+      @robot.place(4,4, 'EAST')
+      @robot.move
+      @robot.location.should eql [4,4]
+    end
   end
 end
