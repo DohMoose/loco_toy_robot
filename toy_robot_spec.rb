@@ -63,6 +63,12 @@ describe ToyRobot do
       @robot.move
       @robot.location.should eql [4,4]
     end
+
+    it 'will not change direction' do
+      @robot.place(4,4, 'EAST')
+      @robot.move
+      @robot.direction.should eql 'EAST'
+    end
   end
 
   describe 'Turn' do
