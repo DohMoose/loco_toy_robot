@@ -11,8 +11,13 @@ describe ToyRobot do
       @robot.location.should eql [1,3]
     end
 
-    it 'will ignore out of bounds co-ordinates' do
+    it 'will ignore out of upper bounds co-ordinates' do
       @robot.place(1,5)
+      @robot.location.should be_nil
+    end
+
+    it 'will ignore out of lower bounds co-ordinates' do
+      @robot.place(-1,3)
       @robot.location.should be_nil
     end
 

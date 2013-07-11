@@ -1,11 +1,11 @@
 class ToyRobot
   attr_reader :location
   attr_reader :direction
-  TABLE_BOUNDS = 5
+  TABLE_BOUNDS = 0..4
 
   def place(x,y,direction=nil)
     @direction = direction if direction
-    @location = [x,y] if (x < TABLE_BOUNDS and y < TABLE_BOUNDS)
+    @location = [x,y] if (TABLE_BOUNDS.include?(x) and TABLE_BOUNDS.include?(y))
   end
 
   def move
