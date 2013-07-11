@@ -90,4 +90,17 @@ describe ToyRobot do
       @robot.direction.should eql 'NORTH'
     end
   end
+
+  describe 'Report' do
+    it 'will report on location and direction' do
+      @robot.place(2,1, 'NORTH')
+      @robot.report.should eql '2,1,NORTH'
+    end
+
+    it 'will not report when not on table' do
+      @robot.report.should be_nil
+      @robot.place(12,3, 'NORTH')
+      @robot.report.should be_nil
+    end
+  end
 end

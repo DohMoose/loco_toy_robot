@@ -26,7 +26,6 @@ class ToyRobot
      DIRECTIONS.index(direction) + index_change if direction
   end
 
-
   def left
     if (index = new_index(-1))
       index = 3 if index < 0
@@ -38,6 +37,12 @@ class ToyRobot
     if (index = new_index(1))
       index = 0 if index > 3
       @direction = DIRECTIONS[index]
+    end
+  end
+
+  def report
+    if location and direction
+      "#{location.join(',')},#{direction}"
     end
   end
 end
