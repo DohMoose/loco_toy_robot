@@ -10,5 +10,9 @@ describe ToyRobot do
       @robot.place(1,3)
       @robot.location.should eql [1,3]
     end
+    it 'will not place the robot in an out of bounds co-ordinates' do
+      @robot.place(1,5)
+      @robot.location.should be_nil
+    end
   end
 end
