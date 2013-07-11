@@ -2,6 +2,7 @@ class ToyRobot
   attr_reader :location
   attr_reader :direction
   TABLE_BOUNDS = 0..4
+  DIRECTIONS = ['NORTH', 'EAST', 'SOUTH', 'WEST']
 
   def place(x,y,direction=nil)
     @direction = direction if direction
@@ -18,6 +19,17 @@ class ToyRobot
       place(location[0] + 1, location[1])
     when 'WEST'
       place(location[0] - 1, location[1] )
+    end
+  end
+
+  def new_index(index_change)
+     DIRECTIONS.index(direction) + index_change if direction
+  end
+
+  def left
+    if (index = new_index(-1))
+      index = 4 if index < 0
+      @direction = DIRECTIONS[index]
     end
   end
 end
