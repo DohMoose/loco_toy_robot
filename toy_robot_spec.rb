@@ -104,14 +104,16 @@ describe ToyRobot do
 
   describe 'Report' do
     it 'will report on location and direction' do
+      STDOUT.should_receive(:puts).with('2,1,NORTH')
       @robot.place(2,1, 'NORTH')
-      @robot.report.should eql '2,1,NORTH'
+      @robot.report
     end
 
     it 'will not report when not on table' do
-      @robot.report.should be_nil
+      STDOUT.should_not_receive(:puts)
+      @robot.report
       @robot.place(12,3, 'NORTH')
-      @robot.report.should be_nil
+      @robot.report
     end
   end
 

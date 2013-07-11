@@ -44,7 +44,7 @@ class ToyRobot
 
   def report
     if location and direction
-      "#{location.join(',')},#{direction}"
+      puts "#{location.join(',')},#{direction}"
     end
   end
 
